@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 
 import requests
 
+print("WELCOME TO THE NBA CLI!")
+
 #containers
 teams = []
 filteredteams = []
