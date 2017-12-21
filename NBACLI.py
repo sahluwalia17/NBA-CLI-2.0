@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 
 import requests
 
-print("WELCOME TO THE NBA CLI!")
+print("Current NBA games being played!")
+print()
 
 #containers
 teams = []
@@ -32,12 +33,22 @@ for h in range (0,len(scores)):
         filteredscores.append(scores[h+10])
 
 #teams playing formatting
-print("--------------")
+print("------------------")
 for x in range(0,len(filteredteams)-1):
     if (x % 2 == 0):
-        print(filteredteams[x] + ": " + filteredscores[x])
-        print(filteredteams[x+1] + ": " + filteredscores[x+1])
-        print("--------------")
+        firstadjust1 = len(filteredteams[x]+":")
+        firstadjust2 = len(filteredscores[x])
+        secondadjust1 = len(filteredteams[x+1]+":")
+        secondadjust2 = len(filteredscores[x+1])
+        if(firstadjust2 == 2):
+            print(filteredteams[x] + ": " + filteredscores[x].rjust(18 - firstadjust1 - firstadjust2 + 1))
+        if(firstadjust2 == 3):
+            print(filteredteams[x] + ": " + filteredscores[x].rjust(18 - firstadjust1 - firstadjust2 + 2))
+        if(secondadjust2 == 2):
+            print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 1))
+        if(secondadjust2 == 3):
+            print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 2))
+        print("------------------")
 
 
 
