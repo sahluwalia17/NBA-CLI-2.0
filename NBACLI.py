@@ -1,36 +1,11 @@
-from bs4 import BeautifulSoup
-
-import requests
+from config import *
+from getGames import *
 
 print("Current NBA games being played!")
 print()
 
-#containers
-teams = []
-filteredteams = []
-scores = []
-filteredscores = []
-
-
-r = requests.get("http://stats.nesn.com/nba/scoreboard.asp")
-soup = BeautifulSoup(r.text,'lxml')
-
-#Finding teams that played
-for h in soup.find_all("td", "shsLeaderTtl"):
-    teams.append(h.string)
-
-for x in range(0,len(teams)):
-    if (x % 3 != 0):
-        filteredteams.append(teams[x])
-        
-#Finding total scores for each team
-for h in soup.find_all("td", "shsTotD"):
-    scores.append(h.string)
-    
-for h in range (0,len(scores)):
-    if (scores[h] == "Tot"):
-        filteredscores.append(scores[h+5])
-        filteredscores.append(scores[h+10])
+#storing information in config files by calling getGames script
+getGames()
 
 #teams playing formatting
 print("------------------")
@@ -49,6 +24,8 @@ for x in range(0,len(filteredteams)-1):
         if(secondadjust2 == 3):
             print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 2))
         print("------------------")
+
+input()
 
 
 

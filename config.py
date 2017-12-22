@@ -1,0 +1,4 @@
+teams = []
+filteredteams = []
+scores = []
+filteredscores = []
