@@ -1,5 +1,7 @@
 from config import *
 from getGames import *
+from getBox import *
+import requests
 
 print("Current NBA games being played!")
 print()
@@ -14,7 +16,8 @@ for x in range(0,len(filteredteams)-1):
         firstadjust1 = len(filteredteams[x]+":")
         firstadjust2 = len(filteredscores[x])
         secondadjust1 = len(filteredteams[x+1]+":")
-        secondadjust2 = len(filteredscores[x+1])
+        secondadjust2 = len(filteredscores[x+1]
+                            )
         if(firstadjust2 == 2):
             print(filteredteams[x] + ": " + filteredscores[x].rjust(18 - firstadjust1 - firstadjust2 + 1))
         if(firstadjust2 == 3):
@@ -24,6 +27,9 @@ for x in range(0,len(filteredteams)-1):
         if(secondadjust2 == 3):
             print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 2))
         print("------------------")
+
+
+getBox()
 
 input()
 
