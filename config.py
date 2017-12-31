@@ -10,3 +10,6 @@ players1 = []
 data0 = []
 data1 = []
 players = []
+
+#getUpcoming config
+upcoming = []

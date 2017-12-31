@@ -24,3 +24,5 @@ def getGames():
         if (scores[h] == "Tot"):
             filteredscores.append(scores[h+5])
             filteredscores.append(scores[h+10])
+
+    

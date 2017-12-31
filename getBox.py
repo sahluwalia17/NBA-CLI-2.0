@@ -23,6 +23,6 @@ def getBox():
     for h in soup.find_all("a"):
         if (str(h.string)[1] == "."):
             players.append(str(h.string))
-
-    print(players)
+    
+    #print(players)
     
