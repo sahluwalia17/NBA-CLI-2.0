@@ -13,3 +13,4 @@ players = []
 
 #getUpcoming config
 upcoming = []
+upcomingTimes = []

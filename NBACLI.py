@@ -4,7 +4,7 @@ from getBox import *
 from getUpcoming import *
 import requests
 
-print("Current NBA games being played!")
+print("Current NBA games being played:")
 
 #storing information in config files by calling getGames script
 getGames()
@@ -32,6 +32,10 @@ if (len(filteredteams) == 0):
     print()
     print("No games currently being played! Checking for upcoming games...")
     getUpcoming()
+    for x in range(0,len(upcoming)-1):
+        if (x % 2 == 0):
+            a = int(x/2)
+            print(upcoming[x] + " vs. " + upcoming[x+1] + " at " + upcomingTimes[a] + ".")
 
 getBox()
 
