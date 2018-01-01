@@ -14,3 +14,9 @@ players = []
 #getUpcoming config
 upcoming = []
 upcomingTimes = []
+
+#getStandings config
+sTeams = []
+filteredsTeams = []
+teamRecords = []
+filteredteamRecords = []

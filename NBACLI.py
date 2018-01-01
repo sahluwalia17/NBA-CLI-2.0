@@ -2,6 +2,7 @@ from config import *
 from getGames import *
 from getBox import *
 from getUpcoming import *
+from getStandings import *
 import requests
 
 print("Current NBA games being played:")
@@ -26,7 +27,7 @@ if (len(filteredteams) > 0):
                 print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 1))
             if(secondadjust2 == 3):
                 print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 2))
-    print("------------------")
+            print("------------------")
     
 if (len(filteredteams) == 0):
     print()
@@ -37,7 +38,15 @@ if (len(filteredteams) == 0):
             a = int(x/2)
             print(upcoming[x] + " vs. " + upcoming[x+1] + " at " + upcomingTimes[a] + ".")
 
-getBox()
+getStandings()
+
+east = filteredsTeams[0:15]
+west = filteredsTeams[15:]
+
+
+for x in range(0,len(filteredteamRecords)-1):
+    for y in range(0,len(filteredsTeams)):
+        
 
 input()
 
