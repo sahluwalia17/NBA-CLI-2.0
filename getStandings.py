@@ -21,7 +21,4 @@ def getStandings():
     for a in teamRecords:
         if a.isdigit() == True:
             filteredteamRecords.append(a)
-
-    east = filteredsTeams[0:15]
-    west = filteredsTeams[15:]
             

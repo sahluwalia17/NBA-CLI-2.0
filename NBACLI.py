@@ -40,14 +40,15 @@ if (len(filteredteams) == 0):
 
 getStandings()
 
-east = filteredsTeams[0:15]
-west = filteredsTeams[15:]
-
-
-for x in range(0,len(filteredteamRecords)-1):
-    for y in range(0,len(filteredsTeams)):
-        
-
+for x in range(0,len(filteredsTeams)):
+    if x == 0:
+        print("Eastern Conference Standings")
+    if x == 15:
+        print()
+        print("Western Conference Standings")
+    a = x * 2
+    print(filteredsTeams[x] + ": " + filteredteamRecords[a] + " - " + filteredteamRecords[a+1])
+          
 input()
 
 
