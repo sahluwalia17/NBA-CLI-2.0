@@ -58,6 +58,15 @@ class NBACLI(Cmd):
             a = x * 2
             print(filteredsTeams[x] + ": " + filteredteamRecords[a] + " - " + filteredteamRecords[a+1])
         print()
+
+    def do_test(self,arg,opts=None):
+        getBox()
+        data = data0 + data1
+        
+        for x in range(0,len(players)):
+            a = x * 14
+            print(players[x] + " |Minutes: " + data[x+1] + " | FGM - FGA: " + data[x+2] + " | FTM - FTA: " + data[x+3] + " | 3PM - 3PA: " + data[x+4] + " | Rebounds: " + data[x+7] + " | Assists: " + data[x+8] + " | Blocks: " + data[x+9] + " | Steals: " + data[x+10] + " | Turnovers: " + data[x+11] + " | Points: " + data[x+13])
+
 nba = NBACLI()
 nba.cmdloop()
 
