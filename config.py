@@ -10,6 +10,8 @@ players1 = []
 data0 = []
 data1 = []
 players = []
+DNP = []
+filteredplayers = []
 
 #getUpcoming config
 upcoming = []

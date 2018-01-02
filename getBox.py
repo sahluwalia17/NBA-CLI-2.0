@@ -5,6 +5,7 @@ import requests
 def getBox():
     r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2017122311&home=11&vis=17")
     soup = BeautifulSoup(r.text,'lxml')
+    #print(soup)
 
     for h in soup.find_all("tr","shsRow0Row"):
         players0.append(h)
@@ -23,6 +24,11 @@ def getBox():
     for h in soup.find_all("a"):
         if (str(h.string)[1] == "."):
             players.append(str(h.string))
+
+    for h in soup.find_all("td", "shsDNP"):
+        if (str(h.string)[1] == "."):
+            DNP.append(h.string)
     
+    #print(DNP)
     #print(players)
     

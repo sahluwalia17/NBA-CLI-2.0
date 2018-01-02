@@ -62,11 +62,12 @@ class NBACLI(Cmd):
     def do_test(self,arg,opts=None):
         getBox()
         data = data0 + data1
-        
-        for x in range(0,len(players)):
+        filteredplayers = [x for x in players if x not in DNP]
+        for x in range(0,len(filteredplayers)):
             a = x * 14
-            print(players[x] + " |Minutes: " + data[x+1] + " | FGM - FGA: " + data[x+2] + " | FTM - FTA: " + data[x+3] + " | 3PM - 3PA: " + data[x+4] + " | Rebounds: " + data[x+7] + " | Assists: " + data[x+8] + " | Blocks: " + data[x+9] + " | Steals: " + data[x+10] + " | Turnovers: " + data[x+11] + " | Points: " + data[x+13])
-
+            print(filteredplayers[x] + " |Minutes: " + data[a+1] + " | FGM - FGA: " + data[a+2] + " | FTM - FTA: " + data[a+3] + " | 3PM - 3PA: " + data[a+4] + " | Rebounds: " + data[a+7] + " | Assists: " + data[a+8] + " | Blocks: " + data[a+9] + " | Steals: " + data[a+10] + " | Turnovers: " + data[a+11] + " | Points: " + data[a+13])
+            print()
+            
 nba = NBACLI()
 nba.cmdloop()
 
