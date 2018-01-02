@@ -61,7 +61,14 @@ class NBACLI(Cmd):
 
     def do_test(self,arg,opts=None):
         getBox()
-        data = data0 + data1
+        data = []
+        print(len(data1))
+        for x in range(0,8):
+            a = x * 14
+            data.append(data0[a],data[a+1],data0[a+2],data0[a+3],data0[a+4],data0[a+5],data0[a+6],data0[a+7],data0[a+8],data0[a+9],data0[a+10],data0[a+11],data0[a+1],data0[a+12],data0[a+13])
+            data.append(data1[a],data[a+1],data1[a+2],data1[a+3],data1[a+4],data1[a+5],data1[a+6],data1[a+7],data1[a+8],data1[a+9],data1[a+10],data1[a+11],data1[a+1],data1[a+12],data1[a+13])
+
+        
         filteredplayers = [x for x in players if x not in DNP]
         for x in range(0,len(filteredplayers)):
             a = x * 14
