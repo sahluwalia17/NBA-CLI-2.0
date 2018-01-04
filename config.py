@@ -3,6 +3,7 @@ teams = []
 filteredteams = []
 scores = []
 filteredscores = []
+status = []
 
 #getBox config
 players0 = []

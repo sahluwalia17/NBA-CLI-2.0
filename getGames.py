@@ -5,7 +5,7 @@ import requests
 
 
 def getGames():
-    r = requests.get("http://stats.nesn.com/nba/scoreboard.asp")
+    r = requests.get("http://stats.nesn.com/nba/scoreboard.asp?meta=true")
     soup = BeautifulSoup(r.text,'lxml')
 
     #Finding teams that played
@@ -24,5 +24,8 @@ def getGames():
         if (scores[h] == "Tot"):
             filteredscores.append(scores[h+5])
             filteredscores.append(scores[h+10])
+            
+    for h in soup.find_all("td","shsTeamCol shsNamD"):
+        status.append(h.string)
 
     
