@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def getBox():
-    r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2017122311&home=11&vis=17")
+    r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2018010319&home=19&vis=10&final=true")
     soup = BeautifulSoup(r.text,'lxml')
     #print(soup)
 
