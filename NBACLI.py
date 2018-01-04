@@ -82,66 +82,6 @@ class NBACLI(Cmd):
 
     def do_test(self,arg,opts=None):
         getBox()
-        data = []
-
-        print(len(data0))
-        print(len(data1))
-        for x in range(0,len(data1)-1):
-            a = int(x * 14)
-            data.append(data0[a])
-            data.append(data0[a+1])
-            data.append(data0[a+2])
-            data.append(data0[a+3])
-            data.append(data0[a+4])
-            data.append(data0[a+5])
-            data.append(data0[a+6])
-            data.append(data0[a+7])
-            data.append(data0[a+8])
-            data.append(data0[a+9])
-            data.append(data0[a+10])
-            data.append(data0[a+11])
-            data.append(data0[a+12])
-            data.append(data0[a+13])
-            data.append(data1[a])
-            data.append(data1[a+1])
-            data.append(data1[a+2])
-            data.append(data1[a+3])
-            data.append(data1[a+4])
-            data.append(data1[a+5])
-            data.append(data1[a+6])
-            data.append(data1[a+7])
-            data.append(data1[a+8])
-            data.append(data1[a+9])
-            data.append(data1[a+10])
-            data.append(data1[a+11])
-            data.append(data1[a+12])
-            data.append(data1[a+13])
-            #data.extend(data0[a],data[a+1],data0[a+2],data0[a+3],data0[a+4],data0[a+5],data0[a+6],data0[a+7],data0[a+8],data0[a+9],data0[a+10],data0[a+11],data0[a+1],data0[a+12],data0[a+13])
-            #data.extend(data1[a],data[a+1],data1[a+2],data1[a+3],data1[a+4],data1[a+5],data1[a+6],data1[a+7],data1[a+8],data1[a+9],data1[a+10],data1[a+11],data1[a+1],data1[a+12],data1[a+13])
-
-        if len(data0) > len(data1):
-            data.append(data0[len(data0)-14])
-            data.append(data0[len(data0)-13])
-            data.append(data0[len(data0)-12])
-            data.append(data0[len(data0)-11])
-            data.append(data0[len(data0)-10])
-            data.append(data0[len(data0)-9])
-            data.append(data0[len(data0)-9])
-            data.append(data0[len(data0)-7])
-            data.append(data0[len(data0)-6])
-            data.append(data0[len(data0)-5])
-            data.append(data0[len(data0)-4])
-            data.append(data0[len(data0)-3])
-            data.append(data0[len(data0)-2])
-            data.append(data0[len(data0)-1])
-            
-        print(len(data))
-        
-        filteredplayers = [x for x in players if x not in DNP]
-        for x in range(0,len(filteredplayers)):
-            a = x * 14
-            print(filteredplayers[x] + " |Minutes: " + str(data[a+1]) + " | FGM - FGA: " + str(data[a+2]) + " | FTM - FTA: " + str(data[a+3]) + " | 3PM - 3PA: " + str(data[a+4]) + " | Rebounds: " + str(data[a+7]) + " | Assists: " + str(data[a+8]) + " | Blocks: " + str(data[a+9]) + " | Steals: " + str(data[a+10]) + " | Turnovers: " + str(data[a+11]) + " | Points: " + str(data[a+13]))
-            print()
 
 nba = NBACLI()
 nba.cmdloop()

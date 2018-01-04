@@ -6,13 +6,9 @@ filteredscores = []
 status = []
 
 #getBox config
-players0 = []
-players1 = []
-data0 = []
-data1 = []
-players = []
-DNP = []
-filteredplayers = []
+rawdata = []
+filteredplayers=[]
+stats = []
 
 #getUpcoming config
 upcoming = []
