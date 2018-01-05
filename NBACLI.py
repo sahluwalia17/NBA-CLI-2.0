@@ -16,7 +16,7 @@ class NBACLI(Cmd):
         getGames()
         getUpcoming()
         new = [x for x in upcoming if x not in filteredteams]
-        
+
         #teams playing formatting
         if (len(filteredteams) > 0):
             print("---------------------")
@@ -27,8 +27,12 @@ class NBACLI(Cmd):
                     firstadjust2 = len(filteredscores[x])
                     secondadjust1 = len(filteredteams[x+1]+":")
                     secondadjust2 = len(filteredscores[x+1])
-                    statusL = len("Status: " + status[a])
+                    statusL = len("Status: " + status[a].rjust(18))
                     print("Status: " + status[a].rjust(18-statusL + 5))
+                    print("Game ID: " + str((a+1)))
+                    if (firstadjust2 == 1):
+                        print(filteredteams[x] + ": " + filteredscores[x].rjust(18-firstadjust1-1))
+                        print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18-secondadjust1-1))
                     if(firstadjust2 == 2):
                         print(filteredteams[x] + ": " + filteredscores[x].rjust(18 - firstadjust1 - firstadjust2 + 1))
                     if(firstadjust2 == 3):
