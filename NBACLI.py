@@ -7,7 +7,8 @@ from cmd2 import Cmd, make_option, options
 import requests
 
 class NBACLI(Cmd):
-    Cmd.prompt="NBA> "
+    print("Welcome to NBA CLI V2.0! If this is your first time, run the help command!")
+    Cmd.prompt="2.0> "
     
     def do_games(self,arg,opts=None):
         print("Current NBA games being played/Games that have finished:")
@@ -106,13 +107,17 @@ class NBACLI(Cmd):
         filteredplayers[:]=[]
         stats[:] = []
         DNP[:] = []
+
+    def do_quit(self,arg,opts = None):
+        exit()
+
+    def do_help(self,arg,opts = None):
+        print("For the best experience, maximize your window!")
+        print("The games command will display upcoming games, scores for games that are currently going on, and scores for games that have finished.")
+        print("When the games command is run, gameid(s) will be printed out. With these gameids you can check box scores.")
+        print("This can be done through box --gameid [id]. Ex: box --gameid 2")
+        print("The standings command will display eastern and western conference standings")
         
 
 nba = NBACLI()
 nba.cmdloop()
-
-
-
-
-
-
