@@ -4,6 +4,8 @@ filteredteams = []
 scores = []
 filteredscores = []
 status = []
+urls = []
+filteredurls = []
 
 #getBox config
 rawdata = []

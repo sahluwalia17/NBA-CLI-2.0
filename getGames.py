@@ -28,4 +28,16 @@ def getGames():
     for h in soup.find_all("td","shsTeamCol shsNamD"):
         status.append(h.string)
 
+    #retrieving box score urls
+
+    for h in soup.find_all("td","shsLiveNav"):
+        for a in h.find_all("a",href = True):
+            urls.append(str(a["href"]))
+
+    for h in urls:
+        if "preview" not in h and "recap" not in h:
+            filteredurls.append("http://stats.nesn.com" + h)
+
+    
+
     

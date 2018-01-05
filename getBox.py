@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 from collections import OrderedDict
 import requests
 
-def getBox():
-    r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2018010410&home=10&vis=9")
+def getBox(gid):
+    r = requests.get(filteredurls[gid-1])
     soup = BeautifulSoup(r.text,'lxml')
     #print(soup)
     
@@ -41,6 +41,10 @@ def getBox():
         stats = stats[11:]
     
     #boxScores outputting
+    team = (gid-1) * 2
+
+    print(filteredteams[team] + " BoxScore")
+    print("--------------------------------")
     for x in range(0,len(filteredplayers)):
         if check == False:
             a = x * 14
@@ -55,6 +59,9 @@ def getBox():
             check = True
             print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
             print()
+            print(filteredteams[team+1] + " Boxscore")
+            print("--------------------------------")
+
             a = (x+1) * 14
             print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
             print()

@@ -8,7 +8,7 @@ import requests
 
 class NBACLI(Cmd):
     Cmd.prompt="NBA> "
-
+    
     def do_games(self,arg,opts=None):
         print("Current NBA games being played/Games that have finished:")
         
@@ -61,6 +61,13 @@ class NBACLI(Cmd):
             
         
         print()
+        #resetting config files for second commmand
+        scores[:] = []
+        filteredscores[:] = []
+        status[:] = []
+        upcoming[:] = []
+        upcomingTimes[:] = []
+        
         
     def do_standings(self,arg,opts = None):
         #storing information in config files by calling get Standings script
@@ -84,9 +91,22 @@ class NBACLI(Cmd):
             counter = counter + 1
         print()
 
+        sTeams[:] = []
+        filteredsTeams[:] = []
+        teamRecords[:] = []
+        filteredteamRecords[:] = []
+
+    @options([
+        make_option("--gameid", dest = "gid")
+            ])
     def do_box(self,arg,opts=None):
         #outputting done by the getBox() script
-        getBox()
+        getBox(int(opts.gid))
+        rawdata[:] = []
+        filteredplayers[:]=[]
+        stats[:] = []
+        DNP[:] = []
+        
 
 nba = NBACLI()
 nba.cmdloop()
