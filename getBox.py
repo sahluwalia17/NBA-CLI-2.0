@@ -41,7 +41,6 @@ def getBox():
         stats = stats[11:]
     
     #boxScores outputting
-    
     for x in range(0,len(filteredplayers)):
         if check == False:
             a = x * 14
@@ -54,7 +53,7 @@ def getBox():
             
         if (stats[a] == "\xa0" and check == False):
             check = True
-            print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
             print()
             a = (x+1) * 14
             print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
@@ -66,4 +65,9 @@ def getBox():
             print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
             print()
             pass
+
+        if check == True and stats[a] == "\xa0":
+            a = (x+1) * 14
+            print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print()
     
