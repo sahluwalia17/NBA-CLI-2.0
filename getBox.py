@@ -44,38 +44,38 @@ def getBox(gid):
     #boxScores outputting
     team = (gid-1) * 2
 
-    print(filteredteams[team] + " BoxScore")
-    print("--------------------------------")
+    puts(colored.magenta(filteredteams[team] + " BoxScore"))
+    puts(colored.magenta("--------------------------------"))
     for x in range(0,len(filteredplayers)):
         if check == False:
             a = x * 14
             
         if stats[a] != "\xa0" and check == False:
             a = x * 14
-            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
+            puts(colored.cyan(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
             pass
             
         if (stats[a] == "\xa0" and check == False):
             check = True
-            print("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
+            puts(colored.cyan("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
-            print(filteredteams[team+1] + " Boxscore")
-            print("--------------------------------")
+            puts(colored.magenta(filteredteams[team+1] + " Boxscore"))
+            puts(colored.magenta("--------------------------------"))
 
             a = (x+1) * 14
-            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
+            puts(colored.yellow(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
             pass
 
         if check == True and stats[a] != "\xa0":
             a = (x+1) * 14
-            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
+            puts(colored.yellow(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
             pass
 
         if check == True and stats[a] == "\xa0":
             a = (x+1) * 14
-            print("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
+            puts(colored.yellow("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
     
