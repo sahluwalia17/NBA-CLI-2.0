@@ -9,6 +9,7 @@ status = []
 rawdata = []
 filteredplayers=[]
 stats = []
+DNP = []
 
 #getUpcoming config
 upcoming = []

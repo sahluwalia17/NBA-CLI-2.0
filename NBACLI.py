@@ -19,7 +19,7 @@ class NBACLI(Cmd):
         
         #teams playing formatting
         if (len(filteredteams) > 0):
-            print("------------------")
+            print("---------------------")
             for x in range(0,len(filteredteams)-1):
                 if (x % 2 == 0):
                     a = int(x / 2)
@@ -37,7 +37,7 @@ class NBACLI(Cmd):
                         print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 1))
                     if(secondadjust2 == 3):
                         print(filteredteams[x+1] + ": " + filteredscores[x+1].rjust(18 - secondadjust1 - secondadjust2 + 2))
-                    print("------------------")
+                    print("---------------------")
 
         if (len(filteredteams) == 0):
             print()
@@ -80,7 +80,8 @@ class NBACLI(Cmd):
             counter = counter + 1
         print()
 
-    def do_test(self,arg,opts=None):
+    def do_box(self,arg,opts=None):
+        #outputting done by the getBox() script
         getBox()
 
 nba = NBACLI()
