@@ -102,6 +102,10 @@ class NBACLI(Cmd):
             ])
     def do_box(self,arg,opts=None):
         #outputting done by the getBox() script
+        if opts.gid == None or (int(opts.gid)) >= len(filteredurls):
+            print("Please specify a valid number!")
+            return
+        
         getBox(int(opts.gid))
         rawdata[:] = []
         filteredplayers[:]=[]

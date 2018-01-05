@@ -4,7 +4,8 @@ from collections import OrderedDict
 import requests
 
 def getBox(gid):
-    r = requests.get(filteredurls[gid-1])
+    #r = requests.get(filteredurls[gid-1])
+    r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2018010412&home=12&vis=25&final=true")
     soup = BeautifulSoup(r.text,'lxml')
     #print(soup)
     
@@ -51,30 +52,30 @@ def getBox(gid):
             
         if stats[a] != "\xa0" and check == False:
             a = x * 14
-            print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
             print()
             pass
             
         if (stats[a] == "\xa0" and check == False):
             check = True
-            print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
             print()
             print(filteredteams[team+1] + " Boxscore")
             print("--------------------------------")
 
             a = (x+1) * 14
-            print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
             print()
             pass
 
         if check == True and stats[a] != "\xa0":
             a = (x+1) * 14
-            print(filteredplayers[x] + " | Minutes: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print(filteredplayers[x] + " | M: " + str(stats[a+1]) + " | FGM - FGA: " + str(stats[a+2]) + " | FTM - FTA: " + str(stats[a+3]) + " | 3PM - 3PA: " + str(stats[a+4]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
             print()
             pass
 
         if check == True and stats[a] == "\xa0":
             a = (x+1) * 14
-            print("Totals: " + " | Minutes: " + str(stats[a+1]) + " | Rebounds: " + str(stats[a+7]) + " | Assists: " + str(stats[a+8]) + " | Blocks: " + str(stats[a+9]) + " | Steals: " + str(stats[a+10]) + " | Turnovers: " + str(stats[a+11]) + " | Points: " + str(stats[a+13]))
+            print("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13]))
             print()
     
