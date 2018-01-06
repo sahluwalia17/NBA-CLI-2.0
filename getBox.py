@@ -1,11 +1,12 @@
 from config import *
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+from clint.textui import colored, puts
+
 import requests
 
 def getBox(gid):
-    #r = requests.get(filteredurls[gid-1])
-    r = requests.get("http://stats.nesn.com/nba/boxscore.asp?gamecode=2018010412&home=12&vis=25&final=true")
+    r = requests.get(filteredurls[gid-1])
     soup = BeautifulSoup(r.text,'lxml')
     #print(soup)
     
