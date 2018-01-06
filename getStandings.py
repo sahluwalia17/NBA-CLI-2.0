@@ -21,4 +21,5 @@ def getStandings():
     for a in teamRecords:
         if a.isdigit() == True:
             filteredteamRecords.append(a)
-            
+
+#Sahil Ahluwalia 2018

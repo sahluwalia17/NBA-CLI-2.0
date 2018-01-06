@@ -79,4 +79,5 @@ def getBox(gid):
             a = (x+1) * 14
             puts(colored.yellow("Totals: " + " | M: " + str(stats[a+1]) + " | R: " + str(stats[a+7]) + " | A: " + str(stats[a+8]) + " | B: " + str(stats[a+9]) + " | S: " + str(stats[a+10]) + " | T: " + str(stats[a+11]) + " | P: " + str(stats[a+13])))
             print()
-    
+
+#Sahil Ahluwalia 2018

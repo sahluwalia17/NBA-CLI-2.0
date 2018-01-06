@@ -14,4 +14,5 @@ def getUpcoming():
     #getting the times for games to be played
     for a in soup.find_all("span", class_ = "shsTimezone shsETZone"):
         upcomingTimes.append(str(a.string))
-            
+
+#Sahil Ahluwalia 2018
