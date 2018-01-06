@@ -5,8 +5,7 @@
  ![games command](https://user-images.githubusercontent.com/24846437/34635685-082d48c2-f248-11e7-9a79-6464aec9715b.PNG)
  
  Check boxscores for games that are being played and for games that have ended.
- ![box 1](https://user-images.githubusercontent.com/24846437/34635683-07fb3224-f248-11e7-9e1d-84b95f28eafb.PNG)
- ![box 2](https://user-images.githubusercontent.com/24846437/34635684-0816066c-f248-11e7-8abb-2f58e4962e51.PNG)
+![box](https://user-images.githubusercontent.com/24846437/34635741-9fd3bd5a-f248-11e7-9b84-96e50e679bfc.PNG)
  
  Check standings in the league
  ![standings](https://user-images.githubusercontent.com/24846437/34635686-08435b4e-f248-11e7-95ea-94f8e1f33ded.PNG)
