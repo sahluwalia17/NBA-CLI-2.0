@@ -12,8 +12,7 @@
  ![standings](https://user-images.githubusercontent.com/24846437/34635686-08435b4e-f248-11e7-95ea-94f8e1f33ded.PNG)
  
  What can be added in future builds:
- - Better text-based UI
- - Colored output
+ - Better boxscores; have it assembled in grid format
  - NBA news and commands to open NBA news links in browser
  - fantasy basketball integration
  
